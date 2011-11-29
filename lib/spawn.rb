@@ -231,3 +231,9 @@ module Spawn
     return SpawnId.new(:thread, thr)
   end
 end
+
+ActiveRecord::Base.send :include, Spawn
+ActionController::Base.send :include, Spawn
+ActiveRecord::Observer.send :include, Spawn
+
+require 'patches'
